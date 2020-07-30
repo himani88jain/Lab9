@@ -54,11 +54,11 @@ public class MenuLab {
 		System.out.println("Thanks for your order!");
 		System.out.println("Here what you got:");
 		for(int i=0;i<count;i++) {
-			System.out.println(orderNames.get(i)+"\t"+orderPrices.get(i));
+			System.out.printf("%-20s%-1s%-20.2f\n",orderNames.get(i),"$",orderPrices.get(i));
 		}
 		
 		
-		System.out.println("Average price per item in order was "+df.format(average(orderPrices)));
+		System.out.println("Average price per item in order was $"+df.format(average(orderPrices)));
 		System.out.println();
 		System.out.println("Index of highest priced item in menu is "+findMaxIndexMenu(items));
 		System.out.println();
@@ -93,7 +93,7 @@ public class MenuLab {
 		int i=0;
 		for(Map.Entry<String,Double> entry: items.entrySet()) {
 			listNumber.add(i+1);
-			System.out.println(listNumber.get(i)+"\t"+entry.getKey()+"\t\t"+entry.getValue());
+			System.out.printf("%-5d%-20s%-1s%-20.2f\n",listNumber.get(i),entry.getKey(),"$",entry.getValue());
 			i++;
 	}
 	}	
